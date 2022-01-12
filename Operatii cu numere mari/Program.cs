@@ -52,9 +52,12 @@ namespace Operatii_cu_numere_mari
                     break;
 
                 case "radacina":
-                    Console.Write("primul nr: "); first = BigInteger.Parse(Console.ReadLine());
-                    Console.Write("al doilea nr: "); second = BigInteger.Parse(Console.ReadLine());
-                    result = first - second;
+                    Console.Write("nr: "); first = BigInteger.Parse(Console.ReadLine());
+                    result = first;
+                    while(result * result  >  first)
+                    {
+                        result--;
+                    }
                     break;
 
                 case "ridicare":
@@ -69,8 +72,20 @@ namespace Operatii_cu_numere_mari
                         rid--;
                     }
                     break;
+
+                default:
+                    Console.WriteLine("Nu ati scris corect");
+                    result = -1;
+                    break;
             }
-            Console.Write("Rezultatul este: " + result);
+            if (op == "radacina" && result * result != first)
+                Console.WriteLine($"rezultatul este aproximativ {result} (intre {result} si {result + 1})");
+            else if (result == -1)
+                Console.Write("");
+            else
+                Console.WriteLine("Rezultatul este: " + result);
+
+
         }
     }
 }
