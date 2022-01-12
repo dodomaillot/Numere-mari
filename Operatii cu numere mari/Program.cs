@@ -12,6 +12,7 @@ namespace Operatii_cu_numere_mari
     {
         static void Main(string[] args)
         {
+
             BigInteger first = new BigInteger();
             BigInteger second = new BigInteger();
             BigInteger result = new BigInteger();
